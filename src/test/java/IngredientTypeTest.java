@@ -19,6 +19,7 @@ public class IngredientTypeTest {
         return IngredientType.values();
     }
 
+
     @Test
     public void values_WhenEnumAccessed_ReturnsAllAvailableTypes() {
         IngredientType[] types = IngredientType.values();

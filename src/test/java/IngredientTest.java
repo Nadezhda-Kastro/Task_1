@@ -36,6 +36,7 @@ public class IngredientTest {
         assertEquals(ingredientType, ingredient.getType());
     }
 
+
     @Test
     public void getName_WhenIngredientCreated_ReturnsCorrectName() {
         Ingredient ingredient = new Ingredient(ingredientType, ingredientName, ingredientPrice);

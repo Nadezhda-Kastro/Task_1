@@ -1,7 +1,8 @@
 import org.junit.Test;
 import org.junit.Before;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
 import praktikum.Bun;
 import praktikum.Burger;
 import praktikum.Ingredient;
@@ -10,6 +11,7 @@ import praktikum.IngredientType;
 import static org.mockito.Mockito.*;
 import static org.junit.Assert.*;
 
+@RunWith(MockitoJUnitRunner.class)
 public class BurgerTest {
 
     @Mock
@@ -25,7 +27,6 @@ public class BurgerTest {
 
     @Before
     public void setUp() {
-        MockitoAnnotations.initMocks(this);
         burger = new Burger();
     }
 
@@ -72,13 +73,11 @@ public class BurgerTest {
         burger.addIngredient(mockIngredient1);
         burger.addIngredient(mockIngredient2);
 
-        when(mockIngredient1.getName()).thenReturn("Cutlet");
-        when(mockIngredient2.getName()).thenReturn("Cheese");
-
         burger.moveIngredient(0, 1);
 
         assertNotNull(burger);
     }
+
 
     @Test
     public void getReceipt_WhenBurgerWithIngredients_ReturnsFormattedReceipt() {
